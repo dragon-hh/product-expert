@@ -1,0 +1,23 @@
+{
+  "description": "客户画像表。本地 records 为空时，表示尚未导入真实客户画像数据。",
+  "primary_key": "customer_id",
+  "schema": {
+    "customer_id": "客户编号",
+    "customer_name": "客户名称",
+    "industry": "行业",
+    "region": "区域",
+    "scale": "规模",
+    "level": "客户等级",
+    "contacts": "联系人",
+    "decision_chain": "决策链",
+    "historical_demands": "历史需求编号列表",
+    "historical_solutions": "历史方案编号列表",
+    "historical_orders": "历史订单或商机编号列表",
+    "service_summary": "服务和 FAE 记录摘要",
+    "roi_summary": "历史 ROI 测算和运行收益摘要",
+    "history_summary": "历史需求/方案/订单/服务摘要",
+    "source": "来源系统或导入文件",
+    "updated_at": "更新时间"
+  },
+  "records": []
+}

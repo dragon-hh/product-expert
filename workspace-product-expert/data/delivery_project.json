@@ -1,0 +1,23 @@
+{
+  "description": "交付项目表。本地 records 为空时，表示尚未导入真实交付项目数据。",
+  "primary_key": "delivery_id",
+  "schema": {
+    "delivery_id": "交付项目编号",
+    "solution_id": "关联方案编号",
+    "order_id": "关联订单编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "delivery_owner": "交付负责人",
+    "fae_owner": "FAE 负责人",
+    "after_sales_owner": "售后负责人",
+    "customer_side_owners": "客户侧责任人",
+    "responsibility_matrix": "责任矩阵",
+    "acceptance_owner": "验收负责人",
+    "delivery_boundary": "交付边界",
+    "acceptance_requirements": "验收要求",
+    "handoff_document_paths": "交付 9 件套文档路径",
+    "operation_data_fields": "储能运行数据回流字段",
+    "handoff_status": "未开始|准备中|已移交|需补充"
+  },
+  "records": []
+}

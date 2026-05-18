@@ -1,0 +1,20 @@
+{
+  "description": "现场勘查表。本地 records 为空时，表示尚未导入真实现场勘查数据。",
+  "primary_key": "survey_id",
+  "schema": {
+    "survey_id": "现场勘查编号",
+    "solution_id": "关联方案编号",
+    "order_id": "关联订单编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "site": "现场位置",
+    "power": "电力条件",
+    "network": "网络条件",
+    "grid_connection": "并网条件",
+    "fire_safety": "消防条件",
+    "environment": "环境条件",
+    "access_conditions": "入场条件",
+    "site_risks": "现场风险"
+  },
+  "records": []
+}

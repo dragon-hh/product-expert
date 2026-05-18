@@ -1,0 +1,22 @@
+{
+  "description": "FAQ 记录表。本地 records 为空时，表示尚未导入销售、客户、FAE 问答和专家修正数据。",
+  "primary_key": "faq_id",
+  "schema": {
+    "faq_id": "FAQ 编号",
+    "question": "问题",
+    "answer": "答案",
+    "category": "产品|技术|认证|交付|ROI|商务|竞品|运维",
+    "status": "候选|已确认|待专家确认|已废弃|需合并",
+    "source": "来源",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "product_line": "产品线",
+    "expert_correction": "专家修正",
+    "adopted": "AI 答案是否被采纳",
+    "source_evidence": "来源证据；飞书消息、服务单、会议纪要、专家修正等",
+    "reviewer": "专家或知识管理员",
+    "created_at": "创建时间",
+    "updated_at": "更新时间"
+  },
+  "records": []
+}

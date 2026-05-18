@@ -1,0 +1,17 @@
+{
+  "description": "Word 模板使用记录表。本地 records 为空时，表示尚未导入模板使用数据。",
+  "primary_key": "usage_id",
+  "schema": {
+    "usage_id": "使用记录编号",
+    "solution_id": "关联方案编号",
+    "template_id": "模板编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "version": "模板版本",
+    "reuse_status": "复用|修改|退回",
+    "return_reason": "退回原因",
+    "created_at": "创建时间",
+    "source": "来源；方案生成、人工导入、复盘补录等"
+  },
+  "records": []
+}

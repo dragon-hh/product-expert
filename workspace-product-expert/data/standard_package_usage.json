@@ -1,0 +1,18 @@
+{
+  "description": "标准包使用记录表。本地 records 为空时，表示尚未导入标准包匹配与使用数据。",
+  "primary_key": "usage_id",
+  "schema": {
+    "usage_id": "使用记录编号",
+    "solution_id": "关联方案编号",
+    "package_name": "标准包名称",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "scenario": "应用场景",
+    "match_reason": "匹配理由",
+    "reuse_status": "复用|修改|不适用",
+    "review_status": "审核状态",
+    "created_at": "创建时间",
+    "source": "来源；标准包匹配、人工导入、复盘补录等"
+  },
+  "records": []
+}

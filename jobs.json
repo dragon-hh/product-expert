@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "c6bae2d1-f61c-50fc-800b-5c04ab142481",
+      "name": "sync-gdp-feishu-data",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "10 7 * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 inbox-normalize-skill 和 data-sync-skill，先将客户主动导入、飞书聊天/表格提取、附件解析、服务记录、ROI 和运行数据整理为 workspace-product-expert/data/inbox/*.json，再写入 workspace-product-expert/data/*.json 本地 GDP；输出同步摘要、各表写入数量、失败数据源、字段缺失和待人工处理事项。若无输入文件则返回 no_input_data。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "b227ba91-ab26-5abd-bbec-dac8d8b0728b",
+      "name": "scan-incomplete-demands",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 demand-gate-skill，扫描未通过准入或待补充的客户需求，计算完整度，生成缺失项提醒、销售补充问题和方案工程风险提示。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "91dfe745-70be-54e3-a9a7-3fee49bd3a7b",
+      "name": "daily-faq-collect",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 faq-memory-skill，汇总当天销售、客户和 FAE 问答，去重归类，输出 FAQ 候选、待专家确认问题和知识库更新候选。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "354ebab6-85a0-570d-ac31-c8750b123454",
+      "name": "weekly-demand-quality-report",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 demand-gate-skill 和 review-report-skill，输出上周需求完整率、退回率、退回原因、缺失字段分布、销售补采建议和规则优化候选。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "bfbc22a7-efc9-5dad-822e-a53c2db337a0",
+      "name": "weekly-faq-report",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 9 * * 1",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 faq-memory-skill 和 review-report-skill，输出上周高频 FAQ、未解决问题、专家修正清单、AI 答案采纳率和知识库更新建议。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "b732f123-45c4-523f-a833-b5cb523fee52",
+      "name": "weekly-sales-conversion-report",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "40 9 * * 1",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 customer-enablement-skill 和 review-report-skill，复盘需求、方案、赋能、承认、订单转化漏斗，输出阻塞原因和下周推进动作。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "28401ea0-7c57-5638-8f7c-1929bed37fc4",
+      "name": "monthly-roi-report",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 1 * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 home-storage-roi-skill、ci-storage-roi-skill、roi-calibration-skill 和 review-report-skill，分析户储和工商储 ROI 覆盖率、达标率、偏差率、收益口径和审核状态。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "e67fa43e-f687-597e-a284-d941dc388f07",
+      "name": "monthly-template-standard-package-report",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 10 1 * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 solution-word-draft-skill、standard-package-match-skill 和 review-report-skill，分析 Word 模板复用率、标准包复用率、退回原因和模板优化建议。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "3bccd20b-6161-5d2b-8709-1dba982cb284",
+      "name": "quarterly-model-calibration",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 1 1,4,7,10 *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 roi-calibration-skill，基于实际运行数据对比测算收益，输出 ROI 偏差来源、参数修正建议和待 ROI 负责人审核事项。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "144144de-251f-5f9c-a7ef-a1238b05ca54",
+      "name": "quarterly-business-review",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 1 1,4,7,10 *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 review-report-skill，复盘客户画像、应用场景、产品线、区域、销售打法、方案质量、FAQ 和交付服务，输出管理层决策建议。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    },
+    {
+      "id": "7d6bac7d-7c84-5ac9-b590-c4b00ecf15a0",
+      "name": "annual-knowledge-consolidation",
+      "enabled": true,
+      "createdAtMs": 1778933400000,
+      "updatedAtMs": 1778933400000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 5 1 *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 0
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "读取 review-report-skill、faq-memory-skill、solution-risk-review-skill 和 roi-calibration-skill，生成年度 FAQ、年度方案白皮书、年度 ROI 报告、模板与标准包优化建议。输出飞书简报、结构化 JSON 摘要、报告路径和可沉淀结论候选。若数据源不可用，说明失败阶段和重试建议；不得覆盖人工审核结论。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "bestEffort": true
+      },
+      "state": {}
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "储能实际运行数据表。本地 records 为空时，表示尚未导入项目运行数据。",
+  "primary_key": "operation_id",
+  "schema": {
+    "operation_id": "运行数据编号",
+    "solution_id": "关联方案编号",
+    "order_id": "关联订单编号",
+    "roi_id": "关联 ROI 测算编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "storage_type": "户用储能|工商储",
+    "window_start": "统计开始时间",
+    "window_end": "统计结束时间",
+    "charge_kwh": "充电量",
+    "discharge_kwh": "放电量",
+    "cycles": "循环次数",
+    "availability": "可用率",
+    "degradation": "衰减",
+    "actual_revenue": "实际收益",
+    "tariff_snapshot": "运行期电价快照",
+    "load_snapshot": "运行期负荷快照",
+    "operation_strategy": "实际运行策略",
+    "ems_parameters": "实际 EMS 参数",
+    "source": "来源系统或导入文件"
+  },
+  "records": []
+}

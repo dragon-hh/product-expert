@@ -1,0 +1,20 @@
+{
+  "description": "客户赋能记录表。本地 records 为空时，表示尚未导入客户赋能和承认推进数据。",
+  "primary_key": "enablement_id",
+  "schema": {
+    "enablement_id": "赋能记录编号",
+    "solution_id": "关联方案编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "materials": "客户资料包/一页纸/评审材料",
+    "view_status": "待赋能|赋能中|已查看|反馈中|已完成",
+    "feedback_status": "未反馈|已反馈|需方案工程处理|已关闭",
+    "ack_status": "未提交|已提交|已承认|需修改|未承认",
+    "feedback": "客户反馈",
+    "objections": "客户异议",
+    "started_at": "赋能开始时间",
+    "completed_at": "赋能完成时间",
+    "source": "来源；飞书提取、人工导入、会议纪要等"
+  },
+  "records": []
+}

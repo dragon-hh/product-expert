@@ -1,0 +1,16 @@
+{
+  "description": "数据同步运行记录。本地 records 为空时，表示尚未执行数据同步。",
+  "primary_key": "run_id",
+  "schema": {
+    "run_id": "同步运行编号",
+    "started_at": "开始时间",
+    "finished_at": "结束时间",
+    "status": "ok|no_input_data|completed_with_errors|failed",
+    "source": "数据来源或导入批次",
+    "files": "处理的 inbox 文件列表",
+    "tables": "各表插入、更新、跳过数量",
+    "error_count": "错误数量",
+    "errors": "错误明细"
+  },
+  "records": []
+}

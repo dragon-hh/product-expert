@@ -1,0 +1,25 @@
+{
+  "description": "订单/商机主表。本地 records 为空时，表示尚未导入真实订单数据。",
+  "primary_key": "order_id",
+  "schema": {
+    "order_id": "订单编号",
+    "opportunity_id": "商机编号",
+    "solution_id": "关联方案编号",
+    "demand_id": "关联需求编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "opportunity_stage": "商机阶段",
+    "order_status": "跟进中|已下单|已取消|暂停",
+    "order_amount": "订单金额",
+    "procurement_plan": "采购计划",
+    "quote_node": "报价节点",
+    "contract_node": "合同节点",
+    "contract_status": "合同状态",
+    "conversion_status": "转化状态",
+    "non_conversion_reason": "未转化原因",
+    "delivery_scope": "交付范围",
+    "source": "来源系统或导入文件",
+    "updated_at": "更新时间"
+  },
+  "records": []
+}

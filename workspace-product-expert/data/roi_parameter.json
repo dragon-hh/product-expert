@@ -1,0 +1,17 @@
+{
+  "description": "ROI 参数表。本地 records 为空时，表示尚未导入电价、负荷、成本和模型参数。",
+  "primary_key": "parameter_id",
+  "schema": {
+    "parameter_id": "参数编号",
+    "region": "地区",
+    "storage_type": "户用储能|工商储",
+    "tariff": "电价参数",
+    "load": "负荷参数",
+    "cost": "成本参数",
+    "subsidy": "补贴参数",
+    "assumptions": "默认假设",
+    "source": "来源",
+    "review_status": "审核状态"
+  },
+  "records": []
+}

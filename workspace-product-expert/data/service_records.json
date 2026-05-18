@@ -1,0 +1,22 @@
+{
+  "description": "FAE/服务记录表。本地 records 为空时，表示尚未导入技术支持、故障、运维服务数据。",
+  "primary_key": "service_id",
+  "schema": {
+    "service_id": "服务记录编号",
+    "solution_id": "关联方案编号",
+    "order_id": "关联订单编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "issue_type": "咨询|配置|部署|运维|故障|认证|兼容性",
+    "question": "问题或故障现象",
+    "resolution": "处理结果",
+    "expert_escalation": "专家转接记录",
+    "faq_candidate": "是否 FAQ 候选",
+    "service_status": "未处理|处理中|已解决|已关闭|需专家确认",
+    "service_owner": "服务负责人",
+    "occurred_at": "发生时间",
+    "closed_at": "关闭时间",
+    "source": "来源系统或导入文件"
+  },
+  "records": []
+}

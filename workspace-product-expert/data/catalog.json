@@ -1,0 +1,85 @@
+{
+  "description": "产品专家 agent 的本地 GDP 数据库。客户导入、飞书聊天/表格提取、附件解析、服务记录和运行数据都归一化写入这些 JSON 表；agent 以这里的 records 作为业务数据底座。",
+  "sources": {
+    "customer_profile": {
+      "path": "workspace-product-expert/data/customer_profile.json",
+      "primary_key": "customer_id",
+      "match_keys": ["customer_id", "customer_name"]
+    },
+    "demand_master": {
+      "path": "workspace-product-expert/data/demand_master.json",
+      "primary_key": "demand_id",
+      "match_keys": ["demand_id", "customer_name", "project_name"]
+    },
+    "solution_master": {
+      "path": "workspace-product-expert/data/solution_master.json",
+      "primary_key": "solution_id",
+      "match_keys": ["solution_id", "demand_id", "customer_name", "project_name"]
+    },
+    "order_master": {
+      "path": "workspace-product-expert/data/order_master.json",
+      "primary_key": "order_id",
+      "match_keys": ["order_id", "opportunity_id", "solution_id", "customer_name", "project_name"]
+    },
+    "delivery_project": {
+      "path": "workspace-product-expert/data/delivery_project.json",
+      "primary_key": "delivery_id",
+      "match_keys": ["delivery_id", "solution_id", "order_id", "customer_name", "project_name"]
+    },
+    "site_survey": {
+      "path": "workspace-product-expert/data/site_survey.json",
+      "primary_key": "survey_id",
+      "match_keys": ["survey_id", "solution_id", "order_id", "customer_name", "project_name"]
+    },
+    "document_library": {
+      "path": "workspace-product-expert/data/document_library.json",
+      "primary_key": "document_id",
+      "match_keys": ["document_id", "solution_id", "demand_id", "order_id", "customer_name", "project_name"]
+    },
+    "roi_measurement": {
+      "path": "workspace-product-expert/data/roi_measurement.json",
+      "primary_key": "roi_id",
+      "match_keys": ["roi_id", "solution_id", "demand_id", "customer_name", "project_name"]
+    },
+    "roi_parameter": {
+      "path": "workspace-product-expert/data/roi_parameter.json",
+      "primary_key": "parameter_id",
+      "match_keys": ["parameter_id", "region", "storage_type", "customer_name", "project_name"]
+    },
+    "enablement_records": {
+      "path": "workspace-product-expert/data/enablement_records.json",
+      "primary_key": "enablement_id",
+      "match_keys": ["enablement_id", "solution_id", "customer_name", "project_name"]
+    },
+    "faq_records": {
+      "path": "workspace-product-expert/data/faq_records.json",
+      "primary_key": "faq_id",
+      "match_keys": ["faq_id", "customer_name", "project_name", "product_line", "category"]
+    },
+    "service_records": {
+      "path": "workspace-product-expert/data/service_records.json",
+      "primary_key": "service_id",
+      "match_keys": ["service_id", "solution_id", "order_id", "customer_name", "project_name"]
+    },
+    "operation_data": {
+      "path": "workspace-product-expert/data/operation_data.json",
+      "primary_key": "operation_id",
+      "match_keys": ["operation_id", "solution_id", "order_id", "customer_name", "project_name"]
+    },
+    "template_usage": {
+      "path": "workspace-product-expert/data/template_usage.json",
+      "primary_key": "usage_id",
+      "match_keys": ["usage_id", "solution_id", "template_id", "customer_name", "project_name"]
+    },
+    "standard_package_usage": {
+      "path": "workspace-product-expert/data/standard_package_usage.json",
+      "primary_key": "usage_id",
+      "match_keys": ["usage_id", "solution_id", "package_name", "customer_name", "project_name"]
+    },
+    "sync_runs": {
+      "path": "workspace-product-expert/data/sync_runs.json",
+      "primary_key": "run_id",
+      "match_keys": ["run_id", "source", "started_at"]
+    }
+  }
+}

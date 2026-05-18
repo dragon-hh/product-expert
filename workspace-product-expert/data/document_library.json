@@ -1,0 +1,22 @@
+{
+  "description": "文档索引表。本地 records 为空时，表示尚未导入真实文档索引。",
+  "primary_key": "document_id",
+  "schema": {
+    "document_id": "文档编号",
+    "document_type": "需求说明书|方案书|客户确认页|合同|验收模板|运维手册|交付9件套|ROI报告|复盘报告|其他",
+    "solution_id": "关联方案编号",
+    "demand_id": "关联需求编号",
+    "order_id": "关联订单编号",
+    "customer_name": "客户名称",
+    "project_name": "项目名称",
+    "path": "本地路径或文档链接",
+    "version": "版本",
+    "review_status": "审核状态",
+    "owner": "文档责任人",
+    "source": "来源；客户导入、飞书提取、skill生成、人工上传等",
+    "related_skill": "生成或更新该文档的 skill",
+    "created_at": "创建时间",
+    "updated_at": "更新时间"
+  },
+  "records": []
+}

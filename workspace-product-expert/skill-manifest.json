@@ -1,0 +1,42 @@
+{
+  "agent": "product-expert",
+  "workspace": "workspace-product-expert",
+  "skills": [
+    "data-sync-skill",
+    "inbox-normalize-skill",
+    "demand-intake-skill",
+    "demand-gate-skill",
+    "customer-profile-skill",
+    "scenario-detect-skill",
+    "storage-project-detect-skill",
+    "home-storage-roi-skill",
+    "ci-storage-roi-skill",
+    "requirement-brief-skill",
+    "solution-word-draft-skill",
+    "standard-package-match-skill",
+    "solution-risk-review-skill",
+    "customer-enablement-skill",
+    "delivery-handoff-skill",
+    "fae-support-skill",
+    "faq-memory-skill",
+    "roi-calibration-skill",
+    "review-report-skill"
+  ],
+  "references": [
+    "cron-runbook.md",
+    "data-contracts.md",
+    "id-rules.md",
+    "report-templates.md",
+    "roi-formulas.md",
+    "standard-packages.md",
+    "writeback-contract.md",
+    "workflow-map.md"
+  ],
+  "deterministic_scripts": [
+    "skills/demand-gate-skill/scripts/score_demand.py",
+    "skills/home-storage-roi-skill/scripts/calculate_home_storage_roi.py",
+    "skills/ci-storage-roi-skill/scripts/calculate_ci_storage_roi.py",
+    "skills/data-sync-skill/scripts/sync_to_local_data.py"
+  ],
+  "cron_catalog": "../jobs.json"
+}
